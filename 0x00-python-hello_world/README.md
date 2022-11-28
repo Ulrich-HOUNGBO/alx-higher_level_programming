@@ -5,7 +5,7 @@
 ### Description of files:
 0. shell script that runs a python SCRIPT (export PYFILE=main.py)
 1. shell script that runs a python CODE (export PYCODE='print("Holberton School: {}".format(88+10))')
-2. Python script that prints exactly "(\"Programming is like building a multilingual puzzle)"
+2. Python script that prints exactly "Programming is like building a multilingual puzzle, followed by a new line
 3. print the integer stored in the variable number, followed by Battery street
 4. print the float stored in the variable number with a precision of 2 digits
 5. print 3 times a string stored in the variable str, followed by its first 9 characters
