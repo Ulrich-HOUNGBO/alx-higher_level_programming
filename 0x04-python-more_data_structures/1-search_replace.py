@@ -8,6 +8,3 @@ def search_replace(my_list, search, replace):
             else:
                 new_list.append(my_list[i])
         return new_list 
-
-
-search_replace([1,2,2,2,4,4,1,3,2,2], 2, 8)
