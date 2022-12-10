@@ -4,7 +4,7 @@ def best_score(a_dictionary):
         best = None
         person = None
         for i in a_dictionary:
-            if a_dictionary[i] > best:
+            if best is None and a_dictionary[i] > best:
                 best = a_dictionary[i]
                 person = i
         return person
