@@ -6,11 +6,11 @@ Defines class Square with private attribute size
 class Square:
     """
     class Square definitions
-    
+
     Args:
         size: size of a side in square
     """
-    def __init__(self,size) -> None:
+    def __init__(self,size):
         """
         Initialize square
 
