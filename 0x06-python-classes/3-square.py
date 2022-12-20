@@ -3,6 +3,8 @@
 Module 3-square
 Defines class Square with private attribute size and public attribute area
 """
+
+
 class Square:
     """
     class Square definitions
