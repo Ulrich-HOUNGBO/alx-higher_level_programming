@@ -15,6 +15,6 @@ class Square:
         Initialize square
 
         Args:
-            size (_type_): size of a side in squar
+            size (_type_): size of a side in square
         """
         self.__size = size
