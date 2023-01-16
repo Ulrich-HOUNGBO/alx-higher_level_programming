@@ -78,3 +78,33 @@ class Rectangle(Base):
     def __str__(self):
         return "[{:s}] ({:d}) {:d} / {:d} - {:d} / {:d}".format(self.__class__.name, self.id, self.__x,
                                                                 self.__y, self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        if args:
+            for k, v in enumarate(args):
+                if k == 0:
+                   self.id = v
+                elif k == 1:
+                    self.width = v
+                elif k == 2:
+                    self.height = v
+                elif k == 3:
+                    self.x = v
+                elif k == 4:
+                    self.y = v
+        else:
+
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+
+            if "y" in kwargs:
+                self.y = kwargs["y"]
