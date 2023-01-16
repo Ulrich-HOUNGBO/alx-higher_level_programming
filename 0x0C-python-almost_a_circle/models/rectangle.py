@@ -81,7 +81,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         if args:
-            for k, v in enumarate(args):
+            for k, v in enumerate(args):
                 if k == 0:
                    self.id = v
                 elif k == 1:
