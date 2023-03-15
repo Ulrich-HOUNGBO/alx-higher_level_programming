@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 const numsArray = process.argv.slice(2);
 function secondMax (array) {
   if (array.length < 2) {
