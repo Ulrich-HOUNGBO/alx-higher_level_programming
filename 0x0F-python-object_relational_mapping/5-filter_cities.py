@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-return info from both tables (tables 'cities' 'states')
-parameters given to script: username, password, database
+return all cities from state given in argument
+parameters given to script: username, password, database, state
 """
+
 from sys import argv
 
 import MySQLdb
@@ -16,12 +17,14 @@ if __name__ == '__main__':
                          db=argv[3])
     # create cursor to execute queries
     cur = db.cursor()
-    sql_cmd = """SELECT cities.id cities.name state.name FROM states 
-                 INNER JOIN cities ON state.id = cities.states_id
+    sql_cmd = """SELECT cities.name FROM cities 
+                 INNER JOIN cities ON state.id = cities.state_id
+                 WHERE states.name LIKE %s 
                  ORDER BY cities.id ASC"""
     cur.execute(sql_cmd)
     rows = cur.fetchall()
+    # format the printing of cities of same state separated by commas
     for row in rows:
-        print(row)
+        print(', '.join(["{:s}".format(row[0])]))
     cur.close()
     db.close()
