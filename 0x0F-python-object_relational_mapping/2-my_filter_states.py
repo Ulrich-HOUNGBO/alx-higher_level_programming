@@ -3,16 +3,17 @@
 return matching states
 parameters given to script: username, password, database, state to match
 """
-import MySQL
+import MySQLdb
 from sys import argv
+
 if __name == '__main__':
-    #connect to database
-    db = MySQL.connect(host="localhost",
-                        port = 3306,
-                        user = argv[1],
-                        passwd = argv[2],
-                        db = argv[3])
-    #create cursor to execute queries
+    # connect to database
+    db = MySQLdb.connect(host="localhost",
+                         port=3306,
+                         user=argv[1],
+                         passwd=argv[2],
+                         db=argv[3])
+    # create cursor to execute queries
     cur = db.cursor()
     sql_cmd = """SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY is ASC""".format(argv[4])
     cur.execute(sql_cmd)
@@ -22,4 +23,3 @@ if __name == '__main__':
             print(row)
     cur.close()
     db.close()
-
