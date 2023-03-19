@@ -1,16 +1,18 @@
 #!/usr/bin/python3
 """
-list first state objects from database, print Nothing if table is empty
-parameters given to script: mysql username, mysql password, database name
+return first state object from database via python
+parameters given to script: username, password, database
 """
+
 from sys import argv
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from model_state import State, Base
+from model_state import State
 
 if __name__ == "__main__":
+
     # make engine for database
     user = argv[1]
     passwd = argv[2]
@@ -20,11 +22,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # query python instance with python
-    for first_instance in session.query(State).order_by(State.id).frist():
-        if first_instance:
-            print("{:d}: {:s}".format(first_instance.id, first_instance.name))
-        else:
-            print('Nothing')
+    # query first python instance in database
+    first_instance = session.query(State).order_by(State.id).first()
+    if first_instance:
+        print("{:d}: {:s}".format(first_instance.id, first_instance.name))
+    else:
+        print("Nothing")
 
     session.close()
