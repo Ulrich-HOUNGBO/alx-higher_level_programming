@@ -22,6 +22,9 @@ if __name__ == '__main__':
 
     # query python instance with python
     for first_instance in session.query(State).order_by(State.id).frist():
-        print("{:d}: {:s}".format(first_instance.id, first_instance.name))
+        if first_instance:
+            print("{:d}: {:s}".format(first_instance.id, first_instance.name))
+        else:
+            print('Nothing')
 
     session.close()
