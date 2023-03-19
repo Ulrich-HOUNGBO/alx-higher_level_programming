@@ -16,7 +16,7 @@ if __name__ == '__main__':
                          db=argv[3])
     # create cursor to execute queries
     cur = db.cursor()
-    sql_cmd = """SELECT cities.id cities.name state.name FROM states 
+    sql_cmd = """SELECT cities.id, cities.name, state.name FROM states 
                  INNER JOIN cities ON state.id = cities.states_id
                  ORDER BY cities.id ASC"""
     cur.execute(sql_cmd)
