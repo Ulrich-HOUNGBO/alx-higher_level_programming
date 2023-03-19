@@ -18,7 +18,7 @@ if __name__ == "__main__":
     # create cursor to execute queries
     cur = db.cursor()
     sql_cmd = """SELECT cities.name FROM cities 
-                 INNER JOIN cities ON state.id = cities.state_id
+                 INNER JOIN cities ON states.id = cities.state_id
                  WHERE states.name LIKE %s 
                  ORDER BY cities.id ASC"""
     cur.execute(sql_cmd)
