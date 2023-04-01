@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 fetch https://intranet.hbtn.io/status; display response
 """
