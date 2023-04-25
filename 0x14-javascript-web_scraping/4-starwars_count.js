@@ -2,22 +2,23 @@
 
 const url = process.argv[2];
 const request = require('request');
-request(url, function (err, res, body) {
+
+request(url, function (err, response, body) {
   if (err) {
     console.log(err);
-  } else if (res.statusCode === 200) {
-    const films = JSON.parse(body).result;
+  } else if (response.statusCode === 200) {
+    const films = JSON.parse(body).results;
     let count = 0;
     for (const i in films) {
       const chars = films[i].characters;
-      for (const j in chars) {
-        if (chars[j].includes('18')) {
+      for (const c in chars) {
+        if (chars[c].includes('18')) {
           count++;
         }
       }
     }
-    console.log('count');
+    console.log(count);
   } else {
-    console.log('ErrorCode' + response.statusCode);
+    console.log('Erorr Code:' + response.statusCode);
   }
 });
