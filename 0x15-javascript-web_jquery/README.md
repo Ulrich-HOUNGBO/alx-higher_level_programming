@@ -17,8 +17,7 @@
   [video to resume](https://www.youtube.com/watch?v=fEYx8dQr_cQ)
   References:
   [What went wrong? Troubleshooting JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_went_wrong)
-  [jQuery](https://jquery.com/)
-  [jQuery API](http://api.jquery.com/)
+  [jQuery](https://jquery.com/)  [ API](http://api.jquery.com/)
   [jQuery Ajax](https://learn.jquery.com/ajax/)
 
 ### Description of what each file shows:
